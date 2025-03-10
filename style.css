@@ -1,8 +1,43 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5dc;
+    color: black;
+    text-align: center;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #444, #222);
+    color: white;
+    padding: 15px 20px;
+    position: relative;
+}
+
+/* Logo */
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Header Title */
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
 /* Menu Icon */
 .menu-icon {
     font-size: 26px;
     cursor: pointer;
-    z-index: 1001;
 }
 
 /* Dropdown Menu */
@@ -33,9 +68,473 @@
     font-weight: bold;
     text-align: left;
     transition: background 0.3s;
-    padding-left: 20px;
 }
 
 #nav-menu ul li:hover {
     background-color: #f0f0f0;
+}
+
+/* Personal Details Box */
+#personal-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    width: 85%;
+    max-width: 450px;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Details Box Styling */
+.details-box {
+    position: relative;
+    padding: 20px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Container */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Profile Image */
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #444;
+}
+
+/* Personal Info */
+.info {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.info p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close-btn:hover {
+    background: darkred;
+}
+
+/* Upload Button */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #28a745, #218838);
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-in-out;
+}
+
+.floating-button:hover {
+    background: radial-gradient(circle, #218838, #1e7e34);
+    transform: scale(1.1);
+}
+
+/* Upload Link Button */
+.upload-link-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #ff8800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.upload-link-btn:hover {
+    background: #cc6b00;
+}
+
+/* Uploaded Files & Links List */
+#uploadedItems {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Individual File Item */
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 5px auto;
+    width: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect: Slightly move up */
+.file-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Serial Number */
+.serial-number {
+    font-weight: bold;
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    width: 30px;
+    text-align: center;
+}
+
+/* Uploaded Link */
+.uploaded-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+    display: inline-block;
+}
+
+.uploaded-link:hover {
+    text-decoration: underline;
+}
+
+/* File Viewer */
+#file-viewer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* File Viewer Content */
+.viewer-content {
+    display: none;
+    width: 60%;
+    height: auto;
+    max-height: 90vh;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Viewed Image */
+#viewed-image {
+    max-width: 95%;
+    max-height: 85vh;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+/* Viewed File */
+#viewed-file {
+    width: 95%;
+    height: 85vh;
+    border-radius: 12px;
+}
+
+/* Stylish Close Button */
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#close-btn:hover {
+    background: darkred;
+}
+
+/* Hide Elements */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .file-item {
+        width: 80%;
+    }
+
+    .viewer-content {
+        width: 90%;
+    }
+
+    #personal-details {
+        width: 90%;
+    }
+}
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5dc;
+    color: black;
+    text-align: center;
+}
+
+/* Navigation Menu */
+#nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 180px;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+#nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-menu ul li {
+    padding: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    transition: background 0.3s;
+}
+
+#nav-menu ul li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none !important;
+}
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5dc;
+    text-align: center;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #444, #222);
+    color: white;
+    padding: 15px 20px;
+}
+
+/* Logo */
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Patient Details Button */
+.patient-details-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.patient-details-btn {
+    width: 200px;
+    padding: 15px;
+    background: linear-gradient(45deg, #ff6b6b, #ffcc5c);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.patient-details-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+/* Show Modal */
+.modal.show-modal {
+    display: block;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    color: red;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5dc;
+    text-align: center;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(45deg, #444, #222);
+    color: white;
+    padding: 15px 20px;
+}
+
+/* Logo */
+.logo {
+    margin-right: auto;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Patient Details Button */
+.patient-details-btn {
+    padding: 15px;
+    background: linear-gradient(45deg, #ff6b6b, #ffcc5c);
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.patient-details-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+/* Show Modal */
+.modal.show-modal {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    color: red;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
 }
