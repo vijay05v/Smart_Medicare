@@ -17,7 +17,7 @@
             <img src="images/medical.png" alt="Medical Logo">
         </div>
         <h1 class="header-title">SMART MEDICARE</h1>
-        <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon">
             <i class="fas fa-bars"></i>
         </div>
     </header>
@@ -25,14 +25,14 @@
     <!-- Menu -->
     <nav id="nav-menu" class="hidden">
         <ul>
-            <li onclick="showMedicalCard()">Patient Details</li>
+            <li id="patient-details-btn">Patient Details</li>
         </ul>
     </nav>
 
-    <!-- Medical Card Modal -->
+    <!-- Patient Details Modal -->
     <div id="medical-card" class="modal hidden">
         <div class="modal-content">
-            <button class="close-btn" onclick="closeMedicalCard()">×</button>
+            <button class="close-btn">×</button>
             <h2>SMART MEDICAL CARD</h2>
             <div class="profile-container">
                 <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
@@ -47,12 +47,12 @@
         </div>
     </div>
 
-    <!-- Floating '+' Button -->
+    <!-- Upload Files Section -->
+    <div id="uploadedItems" class="uploaded-items"></div>
+
+    <!-- Floating '+' button -->
     <div class="floating-button" onclick="document.getElementById('fileInput').click()">+</div>
     <input type="file" id="fileInput" style="display: none;" onchange="uploadFile(event)">
-
-    <!-- Uploaded Files List -->
-    <div id="uploadedItems" class="uploaded-items"></div>
 
     <!-- File Viewer Modal -->
     <div id="file-viewer" class="modal hidden wide-modal">
